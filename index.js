@@ -1,10 +1,16 @@
-for(let i = 0; i < 5; i++) {
-  setTimeout(function() {
-    console.log(i);
-  },1000);
-}
+class Car {
+  constructor(name) {
+    this.name = name;
+  }
+  logName() {
+    console.log(this.name);
+  }
+  static staticFunc() {
+    console.log("I am Static");
+  }
+};
 
-const PI = 3.14;
-
-let a = 1;
-
+const car = new Car("BMW");
+car.logName();
+console.log(car.logName === Car.prototype.logName);
+Car.staticFunc();
