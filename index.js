@@ -1,16 +1,22 @@
 class Car {
   constructor(name) {
+    console.log("Class constructor");
     this.name = name;
   }
   logName() {
-    console.log(this.name);
+    console.log("Car name is: ", this.name);
   }
-  static staticFunc() {
-    console.log("I am Static");
-  }
-};
+}
 
-const car = new Car("BMW");
-car.logName();
-console.log(car.logName === Car.prototype.logName);
-Car.staticFunc();
+class BMW extends Car {
+  constructor(name) {
+    super(name);
+    console.log("BMW constructor");
+  }
+  logName() {
+    super.logName();
+  }
+}
+
+const bmw = new BMW("X6");
+bmw.logName();
