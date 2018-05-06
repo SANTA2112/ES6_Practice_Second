@@ -1,64 +1,16 @@
-/*function* gen() {
-  yield 11;
-  yield 22;
-  yield 33;
-}
+/*let obj1 = {a: 1};
+let obj2 = {b: 2, c: 3};
 
-let iter = gen();
+let obj3 = Object.assign({}, obj1, obj2);
+console.log(obj1, obj2, obj3);
 
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
+let findItem = [1,2,3,4].find(x => x > 3);
 
-function* g1() {
-  yield 1;
-  yield* g2();
-  yield 4;
-}
-function* g2() {
-  yield 2;
-  yield 3;
-}
-let iter = g1();
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
+console.log(findItem);
 
-function* g() {
-  yield* [1,2,3];
-}
-let iter = g();
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
 
-function* getRange(start = 0, end = 100, step = 10) {
-  while (start < end) {
-    yield start;
-    start += step;
-  }
-}
-
-for (let n of getRange(10, 50, 2)) {
-  console.log(n);
-}
+let str = "Hello";
+console.log("Repeat: ", str.repeat(3));
+console.log("startsWith: ", str.startsWith("el", 1));
+console.log("Includes: ", str.includes("el", 1));
 */
-let fib = {
-  *[Symbol.iterator]() {
-    let cur = 1, pre = 0;
-    for(;;) {
-      [cur, pre] = [cur + pre, cur];
-      yield cur;
-    };
-  }
-};
-
-for (let i of fib) {
-  if(i > 3000) break;
-  console.log(i);
-}
