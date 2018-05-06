@@ -9,9 +9,10 @@ export {
 export default function func() {
   console.log("I am func");
 }
-*/
+
 export default class Car {
   constructor() {
     console.log("Car constructor!");
   }
 }
+*/
